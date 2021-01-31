@@ -1,0 +1,1996 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.9.0 on win32)" generated="20210131 11:03:49.261" rpa="false">
+<suite id="s1" name="Parodify" source="c:\Users\julia\Documents\Automacao\Roboframework_avancado\parodify\test\parodify.robot">
+<test id="s1-t1" name="Case 1: Cadastrar usuário">
+<kw name="Abrir navegador e conectar a API" library="resource" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>${NAVEGADOR}</arg>
+</arguments>
+<msg timestamp="20210131 11:03:49.539" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20210131 11:03:49.539" endtime="20210131 11:03:52.817"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210131 11:03:52.818" endtime="20210131 11:03:55.009"></status>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>apiQa</arg>
+<arg>${URL_API}</arg>
+</arguments>
+<msg timestamp="20210131 11:03:55.009" level="INFO">Creating Session using : alias=apiQa, url=http://parodify.qaninja.com.br/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210131 11:03:55.009" endtime="20210131 11:03:55.009"></status>
+</kw>
+<kw name="Get Request" library="RequestsLibrary">
+<doc>Send a GET request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>apiQa</arg>
+<arg>helpers?email=juliano@gmail.com</arg>
+</arguments>
+<assign>
+<var>${RETONO_API}</var>
+</assign>
+<msg timestamp="20210131 11:03:55.435" level="INFO">GET Request : url=http://parodify.qaninja.com.br//helpers?email=juliano@gmail.com 
+ path_url=//helpers?email=juliano@gmail.com 
+ headers={'User-Agent': 'python-requests/2.25.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20210131 11:03:55.435" level="INFO">GET Response : url=http://parodify.qaninja.com.br//helpers?email=juliano@gmail.com 
+ status=200, reason=OK 
+ body=&lt;!DOCTYPE html&gt;
+&lt;html class="has-navbar-fixed-top"&gt;
+  &lt;head&gt;
+    &lt;title&gt;Parodify | QA Ninja&lt;/title&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;meta name="csrf-param" content="authenticity_token" /&gt;
+&lt;meta name="csrf-token" content="auooX9fJe+Ej2DJUWiE6BP+FJ7+9m6x/S/6kIomLwBJTBNYLS83T6f7m+Zo98oFx0OLpn6NlDTQkZ/edUPDMqg==" /&gt;
+    
+
+    &lt;link rel="stylesheet" media="all" href="/assets/application.self-c11562e6979f4d53463bf6471005e9da14df956a3707c4d81c112ee482d82907.css?body=1" data-turbolinks-track="reload" /&gt;
+    &lt;script src="/assets/rails-ujs.self-81c572f39b69ead02e3f97fe43b76954a434591bc2837e3a35af212315e67569.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/activestorage.self-1ed4604ac2170045f1ffca4edb81a75246661555e4f9cf682bb8a21825e32e1c.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/jquery/dist/jquery.min.self-a6ed45d15e46615f8c15931ca254e398a912e770b10122a4435529a1a523180d.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/serviceworker-companion.self-f98d7fe77f78b7ba7f81e7f00bacf86b9f2c0eb054dae1480f8a4cbd2b80f981.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/albums.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/artists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/action_cable.self-69fddfcddf4fdef9828648f9330d6ce108b93b82b0b8d3affffc59a114853451.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/cable.self-8484513823f404ed0c0f039f75243bfdede7af7919dda65f2e66391252443ce9.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/dashboard.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/favorites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/player.self-946bbe25f31ccfd8ed89f201842330c1edb1636155bb8f5dea1ad9f52d688c08.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/recently_heards.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/search.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/serviceworker.self-8f1e7ce8bb27e47095d16b101b578eeb181d07f4f0dc34eac7bf483b4888ca53.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/tabs.self-dea82d54dbb6acdbd8706551e2b4ef2fab0bc2e2a0b5a94fde396a42dd28f455.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/application.self-d088784b7ecb87f1ea17e6f982fa968ffefcc07b79de6ecc548fc00242868da6.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+    &lt;link rel="manifest" href="/manifest.json" /&gt;
+    &lt;meta name="apple-mobile-web-app-capable" content="yes"&gt;
+    &lt;link rel="shortcut icon" type="image/x-icon" href="/assets/favicon-536e2938d293855622b2b631a8d58a928c21130b12df31dcfe806d50c6b6914d.png" /&gt;
+    &lt;!-- Facebook Pixel Code --&gt;
+      &lt;script&gt;
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '290629855465285');
+      fbq('track', 'PageView');
+      &lt;/script&gt;
+      &lt;noscript&gt;&lt;img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=290629855465285&amp;ev=PageView&amp;noscript=1"
+      /&gt;&lt;/noscript&gt;
+    &lt;!-- End Facebook Pixel Code --&gt;
+
+    &lt;!-- Global site tag (gtag.js) - Google Analytics --&gt;
+    &lt;script async src="https://www.googletagmanager.com/gtag/js?id=UA-105779757-4"&gt;&lt;/script&gt;
+    &lt;script&gt;
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-105779757-4');
+    &lt;/script&gt;
+&lt;/head&gt;
+
+  &lt;body&gt;
+    &lt;nav class="columns is-mobile is-black navbar is-fixed-top"&gt;
+  &lt;div class="column is-4-desktop logo"&gt;
+    &lt;img style="width:200px;" src="/assets/logo-dark-5f10b845176006b4a5afdc41430d0b8846cc73726d90a6a34cc12c51f0f2b6b3.png" /&gt;
+  &lt;/div&gt;
+
+
+      &lt;div class="column menu-button"&gt;       
+        &lt;a class="button is-pulled-right is-outlined is-white" href="/users/sign_in"&gt;Login&lt;/a&gt;
+      &lt;/div&gt;
+
+&lt;/nav&gt;
+
+
+    &lt;section class="hero is-fullheight landing"&gt;
+  &lt;div class="hero-body has-text-centered"&gt;
+    &lt;div class="container"&gt;
+      &lt;h1 class="title has-text-weight-black is-1 has-text-white"&gt;Usuário removido&lt;/h1&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+    &lt;audio id="song-player" src="#"&gt;&lt;/audio&gt;
+    
+  &lt;/body&gt;
+&lt;/html&gt; 
+ </msg>
+<msg timestamp="20210131 11:03:55.437" level="INFO">${RETONO_API} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210131 11:03:55.009" endtime="20210131 11:03:55.437"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${RETONO_API.text}</arg>
+</arguments>
+<msg timestamp="20210131 11:03:55.438" level="INFO">&lt;!DOCTYPE html&gt;
+&lt;html class="has-navbar-fixed-top"&gt;
+  &lt;head&gt;
+    &lt;title&gt;Parodify | QA Ninja&lt;/title&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;meta name="csrf-param" content="authenticity_token" /&gt;
+&lt;meta name="csrf-token" content="auooX9fJe+Ej2DJUWiE6BP+FJ7+9m6x/S/6kIomLwBJTBNYLS83T6f7m+Zo98oFx0OLpn6NlDTQkZ/edUPDMqg==" /&gt;
+    
+
+    &lt;link rel="stylesheet" media="all" href="/assets/application.self-c11562e6979f4d53463bf6471005e9da14df956a3707c4d81c112ee482d82907.css?body=1" data-turbolinks-track="reload" /&gt;
+    &lt;script src="/assets/rails-ujs.self-81c572f39b69ead02e3f97fe43b76954a434591bc2837e3a35af212315e67569.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/activestorage.self-1ed4604ac2170045f1ffca4edb81a75246661555e4f9cf682bb8a21825e32e1c.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/jquery/dist/jquery.min.self-a6ed45d15e46615f8c15931ca254e398a912e770b10122a4435529a1a523180d.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/serviceworker-companion.self-f98d7fe77f78b7ba7f81e7f00bacf86b9f2c0eb054dae1480f8a4cbd2b80f981.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/albums.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/artists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/action_cable.self-69fddfcddf4fdef9828648f9330d6ce108b93b82b0b8d3affffc59a114853451.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/cable.self-8484513823f404ed0c0f039f75243bfdede7af7919dda65f2e66391252443ce9.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/dashboard.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/favorites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/player.self-946bbe25f31ccfd8ed89f201842330c1edb1636155bb8f5dea1ad9f52d688c08.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/recently_heards.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/search.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/serviceworker.self-8f1e7ce8bb27e47095d16b101b578eeb181d07f4f0dc34eac7bf483b4888ca53.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/tabs.self-dea82d54dbb6acdbd8706551e2b4ef2fab0bc2e2a0b5a94fde396a42dd28f455.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/application.self-d088784b7ecb87f1ea17e6f982fa968ffefcc07b79de6ecc548fc00242868da6.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+    &lt;link rel="manifest" href="/manifest.json" /&gt;
+    &lt;meta name="apple-mobile-web-app-capable" content="yes"&gt;
+    &lt;link rel="shortcut icon" type="image/x-icon" href="/assets/favicon-536e2938d293855622b2b631a8d58a928c21130b12df31dcfe806d50c6b6914d.png" /&gt;
+    &lt;!-- Facebook Pixel Code --&gt;
+      &lt;script&gt;
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '290629855465285');
+      fbq('track', 'PageView');
+      &lt;/script&gt;
+      &lt;noscript&gt;&lt;img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=290629855465285&amp;ev=PageView&amp;noscript=1"
+      /&gt;&lt;/noscript&gt;
+    &lt;!-- End Facebook Pixel Code --&gt;
+
+    &lt;!-- Global site tag (gtag.js) - Google Analytics --&gt;
+    &lt;script async src="https://www.googletagmanager.com/gtag/js?id=UA-105779757-4"&gt;&lt;/script&gt;
+    &lt;script&gt;
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-105779757-4');
+    &lt;/script&gt;
+&lt;/head&gt;
+
+  &lt;body&gt;
+    &lt;nav class="columns is-mobile is-black navbar is-fixed-top"&gt;
+  &lt;div class="column is-4-desktop logo"&gt;
+    &lt;img style="width:200px;" src="/assets/logo-dark-5f10b845176006b4a5afdc41430d0b8846cc73726d90a6a34cc12c51f0f2b6b3.png" /&gt;
+  &lt;/div&gt;
+
+
+      &lt;div class="column menu-button"&gt;       
+        &lt;a class="button is-pulled-right is-outlined is-white" href="/users/sign_in"&gt;Login&lt;/a&gt;
+      &lt;/div&gt;
+
+&lt;/nav&gt;
+
+
+    &lt;section class="hero is-fullheight landing"&gt;
+  &lt;div class="hero-body has-text-centered"&gt;
+    &lt;div class="container"&gt;
+      &lt;h1 class="title has-text-weight-black is-1 has-text-white"&gt;Usuário removido&lt;/h1&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+    &lt;audio id="song-player" src="#"&gt;&lt;/audio&gt;
+    
+  &lt;/body&gt;
+&lt;/html&gt;</msg>
+<status status="PASS" starttime="20210131 11:03:55.437" endtime="20210131 11:03:55.439"></status>
+</kw>
+<status status="PASS" starttime="20210131 11:03:49.539" endtime="20210131 11:03:55.439"></status>
+</kw>
+<kw name="Dado que eu esteja na página inicial do site" library="PO_cadastro_usuario">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${URL_SITE}</arg>
+</arguments>
+<msg timestamp="20210131 11:03:55.443" level="INFO">Opening url 'http://parodify.qaninja.com.br/'</msg>
+<status status="PASS" starttime="20210131 11:03:55.442" endtime="20210131 11:03:58.183"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${CADASTRO_BTN_EXPERIMENTE}</arg>
+</arguments>
+<status status="PASS" starttime="20210131 11:03:58.183" endtime="20210131 11:03:58.275"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${CADASTRO_BTN_EXPERIMENTE}</arg>
+</arguments>
+<msg timestamp="20210131 11:03:58.276" level="INFO">Clicking element 'css=a[class*='button is-m']'.</msg>
+<status status="PASS" starttime="20210131 11:03:58.275" endtime="20210131 11:03:58.493"></status>
+</kw>
+<status status="PASS" starttime="20210131 11:03:55.441" endtime="20210131 11:03:58.494"></status>
+</kw>
+<kw name="Quando realizado meu cadastro com: &quot;juliano@gmail.com&quot; e &quot;psw123&quot;" library="PO_cadastro_usuario">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<arguments>
+<arg>id=user_email</arg>
+</arguments>
+<status status="PASS" starttime="20210131 11:03:58.499" endtime="20210131 11:03:59.954"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=user_email</arg>
+<arg>${EMAIL}</arg>
+</arguments>
+<msg timestamp="20210131 11:03:59.955" level="INFO">Typing text 'juliano@gmail.com' into text field 'id=user_email'.</msg>
+<status status="PASS" starttime="20210131 11:03:59.954" endtime="20210131 11:04:00.078"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=user_password</arg>
+<arg>${SENHA}</arg>
+</arguments>
+<msg timestamp="20210131 11:04:00.078" level="INFO">Typing text 'psw123' into text field 'id=user_password'.</msg>
+<status status="PASS" starttime="20210131 11:04:00.078" endtime="20210131 11:04:00.219"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=user_password_confirmation</arg>
+<arg>${SENHA}</arg>
+</arguments>
+<msg timestamp="20210131 11:04:00.220" level="INFO">Typing text 'psw123' into text field 'id=user_password_confirmation'.</msg>
+<status status="PASS" starttime="20210131 11:04:00.219" endtime="20210131 11:04:00.363"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${BTN_CADASTRAR}</arg>
+</arguments>
+<msg timestamp="20210131 11:04:00.364" level="INFO">Clicking button 'css=input[class*='fullwidth']'.</msg>
+<status status="PASS" starttime="20210131 11:04:00.363" endtime="20210131 11:04:01.836"></status>
+</kw>
+<status status="PASS" starttime="20210131 11:03:58.497" endtime="20210131 11:04:01.836"></status>
+</kw>
+<kw name="Então devo ser redirecionado para a área logada" library="PO_cadastro_usuario">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<arguments>
+<arg>css=i[class*='has-text-white-bis']</arg>
+</arguments>
+<status status="PASS" starttime="20210131 11:04:01.838" endtime="20210131 11:04:01.868"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>Tocadas Recentemente</arg>
+</arguments>
+<msg timestamp="20210131 11:04:01.888" level="INFO">Current page contains text 'Tocadas Recentemente'.</msg>
+<status status="PASS" starttime="20210131 11:04:01.868" endtime="20210131 11:04:01.888"></status>
+</kw>
+<status status="PASS" starttime="20210131 11:04:01.837" endtime="20210131 11:04:01.888"></status>
+</kw>
+<kw name="Fechar navegador" library="resource" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210131 11:04:01.889" endtime="20210131 11:04:05.514"></status>
+</kw>
+<status status="PASS" starttime="20210131 11:04:01.889" endtime="20210131 11:04:05.514"></status>
+</kw>
+<tags>
+<tag>cadastrar_usuario</tag>
+</tags>
+<status status="PASS" starttime="20210131 11:03:49.538" endtime="20210131 11:04:05.514" critical="yes"></status>
+</test>
+<test id="s1-t2" name="Case2: Buscar por música">
+<kw name="Abrir navegador e conectar a API" library="resource" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>${NAVEGADOR}</arg>
+</arguments>
+<msg timestamp="20210131 11:04:05.522" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20210131 11:04:05.522" endtime="20210131 11:04:08.952"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210131 11:04:08.953" endtime="20210131 11:04:11.112"></status>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>apiQa</arg>
+<arg>${URL_API}</arg>
+</arguments>
+<msg timestamp="20210131 11:04:11.112" level="INFO">Creating Session using : alias=apiQa, url=http://parodify.qaninja.com.br/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210131 11:04:11.112" endtime="20210131 11:04:11.112"></status>
+</kw>
+<kw name="Get Request" library="RequestsLibrary">
+<doc>Send a GET request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>apiQa</arg>
+<arg>helpers?email=juliano@gmail.com</arg>
+</arguments>
+<assign>
+<var>${RETONO_API}</var>
+</assign>
+<msg timestamp="20210131 11:04:11.618" level="INFO">GET Request : url=http://parodify.qaninja.com.br//helpers?email=juliano@gmail.com 
+ path_url=//helpers?email=juliano@gmail.com 
+ headers={'User-Agent': 'python-requests/2.25.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20210131 11:04:11.618" level="INFO">GET Response : url=http://parodify.qaninja.com.br//helpers?email=juliano@gmail.com 
+ status=200, reason=OK 
+ body=&lt;!DOCTYPE html&gt;
+&lt;html class="has-navbar-fixed-top"&gt;
+  &lt;head&gt;
+    &lt;title&gt;Parodify | QA Ninja&lt;/title&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;meta name="csrf-param" content="authenticity_token" /&gt;
+&lt;meta name="csrf-token" content="t8IeiaxQVb5efGdebDw3UP5jWCsSzvrNng3lI0FpGnsGboWK0iybw0io9K1YhIVFMLyxvmclGEyLHUIzxLe6Gw==" /&gt;
+    
+
+    &lt;link rel="stylesheet" media="all" href="/assets/application.self-c11562e6979f4d53463bf6471005e9da14df956a3707c4d81c112ee482d82907.css?body=1" data-turbolinks-track="reload" /&gt;
+    &lt;script src="/assets/rails-ujs.self-81c572f39b69ead02e3f97fe43b76954a434591bc2837e3a35af212315e67569.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/activestorage.self-1ed4604ac2170045f1ffca4edb81a75246661555e4f9cf682bb8a21825e32e1c.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/jquery/dist/jquery.min.self-a6ed45d15e46615f8c15931ca254e398a912e770b10122a4435529a1a523180d.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/serviceworker-companion.self-f98d7fe77f78b7ba7f81e7f00bacf86b9f2c0eb054dae1480f8a4cbd2b80f981.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/albums.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/artists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/action_cable.self-69fddfcddf4fdef9828648f9330d6ce108b93b82b0b8d3affffc59a114853451.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/cable.self-8484513823f404ed0c0f039f75243bfdede7af7919dda65f2e66391252443ce9.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/dashboard.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/favorites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/player.self-946bbe25f31ccfd8ed89f201842330c1edb1636155bb8f5dea1ad9f52d688c08.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/recently_heards.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/search.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/serviceworker.self-8f1e7ce8bb27e47095d16b101b578eeb181d07f4f0dc34eac7bf483b4888ca53.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/tabs.self-dea82d54dbb6acdbd8706551e2b4ef2fab0bc2e2a0b5a94fde396a42dd28f455.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/application.self-d088784b7ecb87f1ea17e6f982fa968ffefcc07b79de6ecc548fc00242868da6.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+    &lt;link rel="manifest" href="/manifest.json" /&gt;
+    &lt;meta name="apple-mobile-web-app-capable" content="yes"&gt;
+    &lt;link rel="shortcut icon" type="image/x-icon" href="/assets/favicon-536e2938d293855622b2b631a8d58a928c21130b12df31dcfe806d50c6b6914d.png" /&gt;
+    &lt;!-- Facebook Pixel Code --&gt;
+      &lt;script&gt;
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '290629855465285');
+      fbq('track', 'PageView');
+      &lt;/script&gt;
+      &lt;noscript&gt;&lt;img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=290629855465285&amp;ev=PageView&amp;noscript=1"
+      /&gt;&lt;/noscript&gt;
+    &lt;!-- End Facebook Pixel Code --&gt;
+
+    &lt;!-- Global site tag (gtag.js) - Google Analytics --&gt;
+    &lt;script async src="https://www.googletagmanager.com/gtag/js?id=UA-105779757-4"&gt;&lt;/script&gt;
+    &lt;script&gt;
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-105779757-4');
+    &lt;/script&gt;
+&lt;/head&gt;
+
+  &lt;body&gt;
+    &lt;nav class="columns is-mobile is-black navbar is-fixed-top"&gt;
+  &lt;div class="column is-4-desktop logo"&gt;
+    &lt;img style="width:200px;" src="/assets/logo-dark-5f10b845176006b4a5afdc41430d0b8846cc73726d90a6a34cc12c51f0f2b6b3.png" /&gt;
+  &lt;/div&gt;
+
+
+      &lt;div class="column menu-button"&gt;       
+        &lt;a class="button is-pulled-right is-outlined is-white" href="/users/sign_in"&gt;Login&lt;/a&gt;
+      &lt;/div&gt;
+
+&lt;/nav&gt;
+
+
+    &lt;section class="hero is-fullheight landing"&gt;
+  &lt;div class="hero-body has-text-centered"&gt;
+    &lt;div class="container"&gt;
+      &lt;h1 class="title has-text-weight-black is-1 has-text-white"&gt;Usuário removido&lt;/h1&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+    &lt;audio id="song-player" src="#"&gt;&lt;/audio&gt;
+    
+  &lt;/body&gt;
+&lt;/html&gt; 
+ </msg>
+<msg timestamp="20210131 11:04:11.618" level="INFO">${RETONO_API} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210131 11:04:11.112" endtime="20210131 11:04:11.618"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${RETONO_API.text}</arg>
+</arguments>
+<msg timestamp="20210131 11:04:11.619" level="INFO">&lt;!DOCTYPE html&gt;
+&lt;html class="has-navbar-fixed-top"&gt;
+  &lt;head&gt;
+    &lt;title&gt;Parodify | QA Ninja&lt;/title&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;meta name="csrf-param" content="authenticity_token" /&gt;
+&lt;meta name="csrf-token" content="t8IeiaxQVb5efGdebDw3UP5jWCsSzvrNng3lI0FpGnsGboWK0iybw0io9K1YhIVFMLyxvmclGEyLHUIzxLe6Gw==" /&gt;
+    
+
+    &lt;link rel="stylesheet" media="all" href="/assets/application.self-c11562e6979f4d53463bf6471005e9da14df956a3707c4d81c112ee482d82907.css?body=1" data-turbolinks-track="reload" /&gt;
+    &lt;script src="/assets/rails-ujs.self-81c572f39b69ead02e3f97fe43b76954a434591bc2837e3a35af212315e67569.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/activestorage.self-1ed4604ac2170045f1ffca4edb81a75246661555e4f9cf682bb8a21825e32e1c.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/jquery/dist/jquery.min.self-a6ed45d15e46615f8c15931ca254e398a912e770b10122a4435529a1a523180d.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/serviceworker-companion.self-f98d7fe77f78b7ba7f81e7f00bacf86b9f2c0eb054dae1480f8a4cbd2b80f981.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/albums.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/artists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/action_cable.self-69fddfcddf4fdef9828648f9330d6ce108b93b82b0b8d3affffc59a114853451.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/cable.self-8484513823f404ed0c0f039f75243bfdede7af7919dda65f2e66391252443ce9.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/dashboard.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/favorites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/player.self-946bbe25f31ccfd8ed89f201842330c1edb1636155bb8f5dea1ad9f52d688c08.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/recently_heards.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/search.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/serviceworker.self-8f1e7ce8bb27e47095d16b101b578eeb181d07f4f0dc34eac7bf483b4888ca53.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/tabs.self-dea82d54dbb6acdbd8706551e2b4ef2fab0bc2e2a0b5a94fde396a42dd28f455.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/application.self-d088784b7ecb87f1ea17e6f982fa968ffefcc07b79de6ecc548fc00242868da6.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+    &lt;link rel="manifest" href="/manifest.json" /&gt;
+    &lt;meta name="apple-mobile-web-app-capable" content="yes"&gt;
+    &lt;link rel="shortcut icon" type="image/x-icon" href="/assets/favicon-536e2938d293855622b2b631a8d58a928c21130b12df31dcfe806d50c6b6914d.png" /&gt;
+    &lt;!-- Facebook Pixel Code --&gt;
+      &lt;script&gt;
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '290629855465285');
+      fbq('track', 'PageView');
+      &lt;/script&gt;
+      &lt;noscript&gt;&lt;img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=290629855465285&amp;ev=PageView&amp;noscript=1"
+      /&gt;&lt;/noscript&gt;
+    &lt;!-- End Facebook Pixel Code --&gt;
+
+    &lt;!-- Global site tag (gtag.js) - Google Analytics --&gt;
+    &lt;script async src="https://www.googletagmanager.com/gtag/js?id=UA-105779757-4"&gt;&lt;/script&gt;
+    &lt;script&gt;
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-105779757-4');
+    &lt;/script&gt;
+&lt;/head&gt;
+
+  &lt;body&gt;
+    &lt;nav class="columns is-mobile is-black navbar is-fixed-top"&gt;
+  &lt;div class="column is-4-desktop logo"&gt;
+    &lt;img style="width:200px;" src="/assets/logo-dark-5f10b845176006b4a5afdc41430d0b8846cc73726d90a6a34cc12c51f0f2b6b3.png" /&gt;
+  &lt;/div&gt;
+
+
+      &lt;div class="column menu-button"&gt;       
+        &lt;a class="button is-pulled-right is-outlined is-white" href="/users/sign_in"&gt;Login&lt;/a&gt;
+      &lt;/div&gt;
+
+&lt;/nav&gt;
+
+
+    &lt;section class="hero is-fullheight landing"&gt;
+  &lt;div class="hero-body has-text-centered"&gt;
+    &lt;div class="container"&gt;
+      &lt;h1 class="title has-text-weight-black is-1 has-text-white"&gt;Usuário removido&lt;/h1&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+    &lt;audio id="song-player" src="#"&gt;&lt;/audio&gt;
+    
+  &lt;/body&gt;
+&lt;/html&gt;</msg>
+<status status="PASS" starttime="20210131 11:04:11.618" endtime="20210131 11:04:11.619"></status>
+</kw>
+<status status="PASS" starttime="20210131 11:04:05.514" endtime="20210131 11:04:11.619"></status>
+</kw>
+<kw name="Dado que eu esteja na página inicial do site" library="PO_cadastro_usuario">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${URL_SITE}</arg>
+</arguments>
+<msg timestamp="20210131 11:04:11.619" level="INFO">Opening url 'http://parodify.qaninja.com.br/'</msg>
+<status status="PASS" starttime="20210131 11:04:11.619" endtime="20210131 11:04:14.434"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${CADASTRO_BTN_EXPERIMENTE}</arg>
+</arguments>
+<status status="PASS" starttime="20210131 11:04:14.434" endtime="20210131 11:04:14.495"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${CADASTRO_BTN_EXPERIMENTE}</arg>
+</arguments>
+<msg timestamp="20210131 11:04:14.495" level="INFO">Clicking element 'css=a[class*='button is-m']'.</msg>
+<status status="PASS" starttime="20210131 11:04:14.495" endtime="20210131 11:04:14.576"></status>
+</kw>
+<status status="PASS" starttime="20210131 11:04:11.619" endtime="20210131 11:04:14.576"></status>
+</kw>
+<kw name="Quando busco pela música &quot;bug de manhã&quot;" library="PO_Busca_musica">
+<kw name="Quando realizado meu cadastro com: &quot;juliano@gmail.com&quot; e &quot;psw123&quot;" library="PO_cadastro_usuario">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<arguments>
+<arg>id=user_email</arg>
+</arguments>
+<status status="PASS" starttime="20210131 11:04:14.579" endtime="20210131 11:04:14.904"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=user_email</arg>
+<arg>${EMAIL}</arg>
+</arguments>
+<msg timestamp="20210131 11:04:14.904" level="INFO">Typing text 'juliano@gmail.com' into text field 'id=user_email'.</msg>
+<status status="PASS" starttime="20210131 11:04:14.904" endtime="20210131 11:04:15.108"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=user_password</arg>
+<arg>${SENHA}</arg>
+</arguments>
+<msg timestamp="20210131 11:04:15.110" level="INFO">Typing text 'psw123' into text field 'id=user_password'.</msg>
+<status status="PASS" starttime="20210131 11:04:15.109" endtime="20210131 11:04:15.303"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=user_password_confirmation</arg>
+<arg>${SENHA}</arg>
+</arguments>
+<msg timestamp="20210131 11:04:15.304" level="INFO">Typing text 'psw123' into text field 'id=user_password_confirmation'.</msg>
+<status status="PASS" starttime="20210131 11:04:15.303" endtime="20210131 11:04:15.495"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${BTN_CADASTRAR}</arg>
+</arguments>
+<msg timestamp="20210131 11:04:15.496" level="INFO">Clicking button 'css=input[class*='fullwidth']'.</msg>
+<status status="PASS" starttime="20210131 11:04:15.496" endtime="20210131 11:04:16.957"></status>
+</kw>
+<status status="PASS" starttime="20210131 11:04:14.578" endtime="20210131 11:04:16.957"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${BTN_BUSCA}</arg>
+</arguments>
+<status status="PASS" starttime="20210131 11:04:16.958" endtime="20210131 11:04:17.005"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${BTN_BUSCA}</arg>
+</arguments>
+<msg timestamp="20210131 11:04:17.005" level="INFO">Clicking element 'css=a[href*='search']'.</msg>
+<status status="PASS" starttime="20210131 11:04:17.005" endtime="20210131 11:04:17.083"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${ID_BUSCA}</arg>
+</arguments>
+<status status="PASS" starttime="20210131 11:04:17.084" endtime="20210131 11:04:17.578"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ID_BUSCA}</arg>
+<arg>${MUSICA}</arg>
+</arguments>
+<msg timestamp="20210131 11:04:17.578" level="INFO">Typing text 'bug de manhã' into text field 'id=search'.</msg>
+<status status="PASS" starttime="20210131 11:04:17.578" endtime="20210131 11:04:17.734"></status>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<arguments>
+<arg>${ID_BUSCA}</arg>
+<arg>ENTER</arg>
+</arguments>
+<msg timestamp="20210131 11:04:17.735" level="INFO">Sending key(s) ('ENTER',) to id=search element.</msg>
+<msg timestamp="20210131 11:04:18.021" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20210131 11:04:18.021" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20210131 11:04:17.734" endtime="20210131 11:04:18.897"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${OPCAO_MUSICA}</arg>
+</arguments>
+<status status="PASS" starttime="20210131 11:04:18.897" endtime="20210131 11:04:18.950"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${OPCAO_MUSICA}</arg>
+</arguments>
+<msg timestamp="20210131 11:04:18.951" level="INFO">Clicking element 'css=a[target*='songs']'.</msg>
+<status status="PASS" starttime="20210131 11:04:18.951" endtime="20210131 11:04:19.046"></status>
+</kw>
+<status status="PASS" starttime="20210131 11:04:14.577" endtime="20210131 11:04:19.046"></status>
+</kw>
+<kw name="Então a música será tocada" library="PO_Busca_musica">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${BTN_PLAY}</arg>
+</arguments>
+<status status="PASS" starttime="20210131 11:04:19.048" endtime="20210131 11:04:19.099"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${BTN_PLAY}</arg>
+</arguments>
+<msg timestamp="20210131 11:04:19.100" level="INFO">Clicking element 'css=i[class='fas fa-play-circle fa-2x']'.</msg>
+<status status="PASS" starttime="20210131 11:04:19.099" endtime="20210131 11:04:19.974"></status>
+</kw>
+<status status="PASS" starttime="20210131 11:04:19.047" endtime="20210131 11:04:19.974"></status>
+</kw>
+<kw name="Fechar navegador" library="resource" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210131 11:04:19.977" endtime="20210131 11:04:22.245"></status>
+</kw>
+<status status="PASS" starttime="20210131 11:04:19.975" endtime="20210131 11:04:22.245"></status>
+</kw>
+<tags>
+<tag>busca_musica</tag>
+</tags>
+<status status="PASS" starttime="20210131 11:04:05.514" endtime="20210131 11:04:22.245" critical="yes"></status>
+</test>
+<test id="s1-t3" name="Case 3: Cadastrar usuário sem SENHA">
+<kw name="Abrir navegador e conectar a API" library="resource" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>${NAVEGADOR}</arg>
+</arguments>
+<msg timestamp="20210131 11:04:22.253" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20210131 11:04:22.253" endtime="20210131 11:04:25.655"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210131 11:04:25.656" endtime="20210131 11:04:27.841"></status>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>apiQa</arg>
+<arg>${URL_API}</arg>
+</arguments>
+<msg timestamp="20210131 11:04:27.842" level="INFO">Creating Session using : alias=apiQa, url=http://parodify.qaninja.com.br/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210131 11:04:27.842" endtime="20210131 11:04:27.842"></status>
+</kw>
+<kw name="Get Request" library="RequestsLibrary">
+<doc>Send a GET request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>apiQa</arg>
+<arg>helpers?email=juliano@gmail.com</arg>
+</arguments>
+<assign>
+<var>${RETONO_API}</var>
+</assign>
+<msg timestamp="20210131 11:04:28.231" level="INFO">GET Request : url=http://parodify.qaninja.com.br//helpers?email=juliano@gmail.com 
+ path_url=//helpers?email=juliano@gmail.com 
+ headers={'User-Agent': 'python-requests/2.25.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20210131 11:04:28.231" level="INFO">GET Response : url=http://parodify.qaninja.com.br//helpers?email=juliano@gmail.com 
+ status=200, reason=OK 
+ body=&lt;!DOCTYPE html&gt;
+&lt;html class="has-navbar-fixed-top"&gt;
+  &lt;head&gt;
+    &lt;title&gt;Parodify | QA Ninja&lt;/title&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;meta name="csrf-param" content="authenticity_token" /&gt;
+&lt;meta name="csrf-token" content="3dWYzL059mNWuegt75FSJELT98LMAMEshDjwasomnxXLlq1shUPIM5+IIU/R6+AP94pQaO+KKRfDn6nlUJHRIg==" /&gt;
+    
+
+    &lt;link rel="stylesheet" media="all" href="/assets/application.self-c11562e6979f4d53463bf6471005e9da14df956a3707c4d81c112ee482d82907.css?body=1" data-turbolinks-track="reload" /&gt;
+    &lt;script src="/assets/rails-ujs.self-81c572f39b69ead02e3f97fe43b76954a434591bc2837e3a35af212315e67569.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/activestorage.self-1ed4604ac2170045f1ffca4edb81a75246661555e4f9cf682bb8a21825e32e1c.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/jquery/dist/jquery.min.self-a6ed45d15e46615f8c15931ca254e398a912e770b10122a4435529a1a523180d.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/serviceworker-companion.self-f98d7fe77f78b7ba7f81e7f00bacf86b9f2c0eb054dae1480f8a4cbd2b80f981.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/albums.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/artists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/action_cable.self-69fddfcddf4fdef9828648f9330d6ce108b93b82b0b8d3affffc59a114853451.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/cable.self-8484513823f404ed0c0f039f75243bfdede7af7919dda65f2e66391252443ce9.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/dashboard.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/favorites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/player.self-946bbe25f31ccfd8ed89f201842330c1edb1636155bb8f5dea1ad9f52d688c08.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/recently_heards.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/search.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/serviceworker.self-8f1e7ce8bb27e47095d16b101b578eeb181d07f4f0dc34eac7bf483b4888ca53.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/tabs.self-dea82d54dbb6acdbd8706551e2b4ef2fab0bc2e2a0b5a94fde396a42dd28f455.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/application.self-d088784b7ecb87f1ea17e6f982fa968ffefcc07b79de6ecc548fc00242868da6.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+    &lt;link rel="manifest" href="/manifest.json" /&gt;
+    &lt;meta name="apple-mobile-web-app-capable" content="yes"&gt;
+    &lt;link rel="shortcut icon" type="image/x-icon" href="/assets/favicon-536e2938d293855622b2b631a8d58a928c21130b12df31dcfe806d50c6b6914d.png" /&gt;
+    &lt;!-- Facebook Pixel Code --&gt;
+      &lt;script&gt;
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '290629855465285');
+      fbq('track', 'PageView');
+      &lt;/script&gt;
+      &lt;noscript&gt;&lt;img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=290629855465285&amp;ev=PageView&amp;noscript=1"
+      /&gt;&lt;/noscript&gt;
+    &lt;!-- End Facebook Pixel Code --&gt;
+
+    &lt;!-- Global site tag (gtag.js) - Google Analytics --&gt;
+    &lt;script async src="https://www.googletagmanager.com/gtag/js?id=UA-105779757-4"&gt;&lt;/script&gt;
+    &lt;script&gt;
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-105779757-4');
+    &lt;/script&gt;
+&lt;/head&gt;
+
+  &lt;body&gt;
+    &lt;nav class="columns is-mobile is-black navbar is-fixed-top"&gt;
+  &lt;div class="column is-4-desktop logo"&gt;
+    &lt;img style="width:200px;" src="/assets/logo-dark-5f10b845176006b4a5afdc41430d0b8846cc73726d90a6a34cc12c51f0f2b6b3.png" /&gt;
+  &lt;/div&gt;
+
+
+      &lt;div class="column menu-button"&gt;       
+        &lt;a class="button is-pulled-right is-outlined is-white" href="/users/sign_in"&gt;Login&lt;/a&gt;
+      &lt;/div&gt;
+
+&lt;/nav&gt;
+
+
+    &lt;section class="hero is-fullheight landing"&gt;
+  &lt;div class="hero-body has-text-centered"&gt;
+    &lt;div class="container"&gt;
+      &lt;h1 class="title has-text-weight-black is-1 has-text-white"&gt;Usuário removido&lt;/h1&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+    &lt;audio id="song-player" src="#"&gt;&lt;/audio&gt;
+    
+  &lt;/body&gt;
+&lt;/html&gt; 
+ </msg>
+<msg timestamp="20210131 11:04:28.232" level="INFO">${RETONO_API} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210131 11:04:27.842" endtime="20210131 11:04:28.232"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${RETONO_API.text}</arg>
+</arguments>
+<msg timestamp="20210131 11:04:28.232" level="INFO">&lt;!DOCTYPE html&gt;
+&lt;html class="has-navbar-fixed-top"&gt;
+  &lt;head&gt;
+    &lt;title&gt;Parodify | QA Ninja&lt;/title&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;meta name="csrf-param" content="authenticity_token" /&gt;
+&lt;meta name="csrf-token" content="3dWYzL059mNWuegt75FSJELT98LMAMEshDjwasomnxXLlq1shUPIM5+IIU/R6+AP94pQaO+KKRfDn6nlUJHRIg==" /&gt;
+    
+
+    &lt;link rel="stylesheet" media="all" href="/assets/application.self-c11562e6979f4d53463bf6471005e9da14df956a3707c4d81c112ee482d82907.css?body=1" data-turbolinks-track="reload" /&gt;
+    &lt;script src="/assets/rails-ujs.self-81c572f39b69ead02e3f97fe43b76954a434591bc2837e3a35af212315e67569.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/activestorage.self-1ed4604ac2170045f1ffca4edb81a75246661555e4f9cf682bb8a21825e32e1c.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/jquery/dist/jquery.min.self-a6ed45d15e46615f8c15931ca254e398a912e770b10122a4435529a1a523180d.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/serviceworker-companion.self-f98d7fe77f78b7ba7f81e7f00bacf86b9f2c0eb054dae1480f8a4cbd2b80f981.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/albums.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/artists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/action_cable.self-69fddfcddf4fdef9828648f9330d6ce108b93b82b0b8d3affffc59a114853451.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/cable.self-8484513823f404ed0c0f039f75243bfdede7af7919dda65f2e66391252443ce9.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/dashboard.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/favorites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/player.self-946bbe25f31ccfd8ed89f201842330c1edb1636155bb8f5dea1ad9f52d688c08.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/recently_heards.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/search.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/serviceworker.self-8f1e7ce8bb27e47095d16b101b578eeb181d07f4f0dc34eac7bf483b4888ca53.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/tabs.self-dea82d54dbb6acdbd8706551e2b4ef2fab0bc2e2a0b5a94fde396a42dd28f455.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/application.self-d088784b7ecb87f1ea17e6f982fa968ffefcc07b79de6ecc548fc00242868da6.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+    &lt;link rel="manifest" href="/manifest.json" /&gt;
+    &lt;meta name="apple-mobile-web-app-capable" content="yes"&gt;
+    &lt;link rel="shortcut icon" type="image/x-icon" href="/assets/favicon-536e2938d293855622b2b631a8d58a928c21130b12df31dcfe806d50c6b6914d.png" /&gt;
+    &lt;!-- Facebook Pixel Code --&gt;
+      &lt;script&gt;
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '290629855465285');
+      fbq('track', 'PageView');
+      &lt;/script&gt;
+      &lt;noscript&gt;&lt;img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=290629855465285&amp;ev=PageView&amp;noscript=1"
+      /&gt;&lt;/noscript&gt;
+    &lt;!-- End Facebook Pixel Code --&gt;
+
+    &lt;!-- Global site tag (gtag.js) - Google Analytics --&gt;
+    &lt;script async src="https://www.googletagmanager.com/gtag/js?id=UA-105779757-4"&gt;&lt;/script&gt;
+    &lt;script&gt;
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-105779757-4');
+    &lt;/script&gt;
+&lt;/head&gt;
+
+  &lt;body&gt;
+    &lt;nav class="columns is-mobile is-black navbar is-fixed-top"&gt;
+  &lt;div class="column is-4-desktop logo"&gt;
+    &lt;img style="width:200px;" src="/assets/logo-dark-5f10b845176006b4a5afdc41430d0b8846cc73726d90a6a34cc12c51f0f2b6b3.png" /&gt;
+  &lt;/div&gt;
+
+
+      &lt;div class="column menu-button"&gt;       
+        &lt;a class="button is-pulled-right is-outlined is-white" href="/users/sign_in"&gt;Login&lt;/a&gt;
+      &lt;/div&gt;
+
+&lt;/nav&gt;
+
+
+    &lt;section class="hero is-fullheight landing"&gt;
+  &lt;div class="hero-body has-text-centered"&gt;
+    &lt;div class="container"&gt;
+      &lt;h1 class="title has-text-weight-black is-1 has-text-white"&gt;Usuário removido&lt;/h1&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+    &lt;audio id="song-player" src="#"&gt;&lt;/audio&gt;
+    
+  &lt;/body&gt;
+&lt;/html&gt;</msg>
+<status status="PASS" starttime="20210131 11:04:28.232" endtime="20210131 11:04:28.232"></status>
+</kw>
+<status status="PASS" starttime="20210131 11:04:22.253" endtime="20210131 11:04:28.232"></status>
+</kw>
+<kw name="Dado que eu esteja na página inicial do site" library="PO_cadastro_usuario">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${URL_SITE}</arg>
+</arguments>
+<msg timestamp="20210131 11:04:28.232" level="INFO">Opening url 'http://parodify.qaninja.com.br/'</msg>
+<status status="PASS" starttime="20210131 11:04:28.232" endtime="20210131 11:04:33.200"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${CADASTRO_BTN_EXPERIMENTE}</arg>
+</arguments>
+<status status="PASS" starttime="20210131 11:04:33.200" endtime="20210131 11:04:33.240"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${CADASTRO_BTN_EXPERIMENTE}</arg>
+</arguments>
+<msg timestamp="20210131 11:04:33.241" level="INFO">Clicking element 'css=a[class*='button is-m']'.</msg>
+<status status="PASS" starttime="20210131 11:04:33.240" endtime="20210131 11:04:33.310"></status>
+</kw>
+<status status="PASS" starttime="20210131 11:04:28.232" endtime="20210131 11:04:33.310"></status>
+</kw>
+<kw name="Quando realizo o cadastro apenas com o email: &quot;juliano@gmail.com&quot;" library="PO_cadastro_usuario">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<arguments>
+<arg>id=user_email</arg>
+</arguments>
+<status status="PASS" starttime="20210131 11:04:33.312" endtime="20210131 11:04:33.583"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=user_email</arg>
+<arg>${EMAIL}</arg>
+</arguments>
+<msg timestamp="20210131 11:04:33.583" level="INFO">Typing text 'juliano@gmail.com' into text field 'id=user_email'.</msg>
+<status status="PASS" starttime="20210131 11:04:33.583" endtime="20210131 11:04:33.686"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${BTN_CADASTRAR}</arg>
+</arguments>
+<msg timestamp="20210131 11:04:33.686" level="INFO">Clicking button 'css=input[class*='fullwidth']'.</msg>
+<status status="PASS" starttime="20210131 11:04:33.686" endtime="20210131 11:04:34.702"></status>
+</kw>
+<status status="PASS" starttime="20210131 11:04:33.311" endtime="20210131 11:04:34.702"></status>
+</kw>
+<kw name="Então verei a mensagem: &quot;Oops! Informe sua senha.&quot;" library="PO_cadastro_usuario">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${MSG_ESPERADA}</arg>
+</arguments>
+<status status="PASS" starttime="20210131 11:04:34.703" endtime="20210131 11:04:34.728"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>${MENSAGEM}</arg>
+</arguments>
+<msg timestamp="20210131 11:04:34.744" level="INFO">Current page contains text 'Oops! Informe sua senha.'.</msg>
+<status status="PASS" starttime="20210131 11:04:34.729" endtime="20210131 11:04:34.744"></status>
+</kw>
+<status status="PASS" starttime="20210131 11:04:34.703" endtime="20210131 11:04:34.745"></status>
+</kw>
+<kw name="Fechar navegador" library="resource" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210131 11:04:34.745" endtime="20210131 11:04:37.059"></status>
+</kw>
+<status status="PASS" starttime="20210131 11:04:34.745" endtime="20210131 11:04:37.059"></status>
+</kw>
+<tags>
+<tag>usuario_sem_senha</tag>
+</tags>
+<status status="PASS" starttime="20210131 11:04:22.245" endtime="20210131 11:04:37.059" critical="yes"></status>
+</test>
+<test id="s1-t4" name="Case 4: Cadastrar usuário sem EMAIL">
+<kw name="Abrir navegador e conectar a API" library="resource" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>${NAVEGADOR}</arg>
+</arguments>
+<msg timestamp="20210131 11:04:37.068" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20210131 11:04:37.068" endtime="20210131 11:04:40.490"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210131 11:04:40.491" endtime="20210131 11:04:42.643"></status>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>apiQa</arg>
+<arg>${URL_API}</arg>
+</arguments>
+<msg timestamp="20210131 11:04:42.646" level="INFO">Creating Session using : alias=apiQa, url=http://parodify.qaninja.com.br/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210131 11:04:42.643" endtime="20210131 11:04:42.647"></status>
+</kw>
+<kw name="Get Request" library="RequestsLibrary">
+<doc>Send a GET request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>apiQa</arg>
+<arg>helpers?email=juliano@gmail.com</arg>
+</arguments>
+<assign>
+<var>${RETONO_API}</var>
+</assign>
+<msg timestamp="20210131 11:04:44.017" level="INFO">GET Request : url=http://parodify.qaninja.com.br//helpers?email=juliano@gmail.com 
+ path_url=//helpers?email=juliano@gmail.com 
+ headers={'User-Agent': 'python-requests/2.25.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20210131 11:04:44.017" level="INFO">GET Response : url=http://parodify.qaninja.com.br//helpers?email=juliano@gmail.com 
+ status=200, reason=OK 
+ body=&lt;!DOCTYPE html&gt;
+&lt;html class="has-navbar-fixed-top"&gt;
+  &lt;head&gt;
+    &lt;title&gt;Parodify | QA Ninja&lt;/title&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;meta name="csrf-param" content="authenticity_token" /&gt;
+&lt;meta name="csrf-token" content="JDYNEC40rRjlkHD+Vocdz6IXOLpK8opUWnvAGEcGW57CFCXFcQ++qS7zx8KG5lz2CJKdKaJCRxW2aCrRNap21A==" /&gt;
+    
+
+    &lt;link rel="stylesheet" media="all" href="/assets/application.self-c11562e6979f4d53463bf6471005e9da14df956a3707c4d81c112ee482d82907.css?body=1" data-turbolinks-track="reload" /&gt;
+    &lt;script src="/assets/rails-ujs.self-81c572f39b69ead02e3f97fe43b76954a434591bc2837e3a35af212315e67569.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/activestorage.self-1ed4604ac2170045f1ffca4edb81a75246661555e4f9cf682bb8a21825e32e1c.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/jquery/dist/jquery.min.self-a6ed45d15e46615f8c15931ca254e398a912e770b10122a4435529a1a523180d.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/serviceworker-companion.self-f98d7fe77f78b7ba7f81e7f00bacf86b9f2c0eb054dae1480f8a4cbd2b80f981.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/albums.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/artists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/action_cable.self-69fddfcddf4fdef9828648f9330d6ce108b93b82b0b8d3affffc59a114853451.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/cable.self-8484513823f404ed0c0f039f75243bfdede7af7919dda65f2e66391252443ce9.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/dashboard.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/favorites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/player.self-946bbe25f31ccfd8ed89f201842330c1edb1636155bb8f5dea1ad9f52d688c08.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/recently_heards.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/search.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/serviceworker.self-8f1e7ce8bb27e47095d16b101b578eeb181d07f4f0dc34eac7bf483b4888ca53.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/tabs.self-dea82d54dbb6acdbd8706551e2b4ef2fab0bc2e2a0b5a94fde396a42dd28f455.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/application.self-d088784b7ecb87f1ea17e6f982fa968ffefcc07b79de6ecc548fc00242868da6.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+    &lt;link rel="manifest" href="/manifest.json" /&gt;
+    &lt;meta name="apple-mobile-web-app-capable" content="yes"&gt;
+    &lt;link rel="shortcut icon" type="image/x-icon" href="/assets/favicon-536e2938d293855622b2b631a8d58a928c21130b12df31dcfe806d50c6b6914d.png" /&gt;
+    &lt;!-- Facebook Pixel Code --&gt;
+      &lt;script&gt;
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '290629855465285');
+      fbq('track', 'PageView');
+      &lt;/script&gt;
+      &lt;noscript&gt;&lt;img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=290629855465285&amp;ev=PageView&amp;noscript=1"
+      /&gt;&lt;/noscript&gt;
+    &lt;!-- End Facebook Pixel Code --&gt;
+
+    &lt;!-- Global site tag (gtag.js) - Google Analytics --&gt;
+    &lt;script async src="https://www.googletagmanager.com/gtag/js?id=UA-105779757-4"&gt;&lt;/script&gt;
+    &lt;script&gt;
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-105779757-4');
+    &lt;/script&gt;
+&lt;/head&gt;
+
+  &lt;body&gt;
+    &lt;nav class="columns is-mobile is-black navbar is-fixed-top"&gt;
+  &lt;div class="column is-4-desktop logo"&gt;
+    &lt;img style="width:200px;" src="/assets/logo-dark-5f10b845176006b4a5afdc41430d0b8846cc73726d90a6a34cc12c51f0f2b6b3.png" /&gt;
+  &lt;/div&gt;
+
+
+      &lt;div class="column menu-button"&gt;       
+        &lt;a class="button is-pulled-right is-outlined is-white" href="/users/sign_in"&gt;Login&lt;/a&gt;
+      &lt;/div&gt;
+
+&lt;/nav&gt;
+
+
+    &lt;section class="hero is-fullheight landing"&gt;
+  &lt;div class="hero-body has-text-centered"&gt;
+    &lt;div class="container"&gt;
+      &lt;h1 class="title has-text-weight-black is-1 has-text-white"&gt;Usuário removido&lt;/h1&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+    &lt;audio id="song-player" src="#"&gt;&lt;/audio&gt;
+    
+  &lt;/body&gt;
+&lt;/html&gt; 
+ </msg>
+<msg timestamp="20210131 11:04:44.017" level="INFO">${RETONO_API} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210131 11:04:42.647" endtime="20210131 11:04:44.017"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${RETONO_API.text}</arg>
+</arguments>
+<msg timestamp="20210131 11:04:44.018" level="INFO">&lt;!DOCTYPE html&gt;
+&lt;html class="has-navbar-fixed-top"&gt;
+  &lt;head&gt;
+    &lt;title&gt;Parodify | QA Ninja&lt;/title&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;meta name="csrf-param" content="authenticity_token" /&gt;
+&lt;meta name="csrf-token" content="JDYNEC40rRjlkHD+Vocdz6IXOLpK8opUWnvAGEcGW57CFCXFcQ++qS7zx8KG5lz2CJKdKaJCRxW2aCrRNap21A==" /&gt;
+    
+
+    &lt;link rel="stylesheet" media="all" href="/assets/application.self-c11562e6979f4d53463bf6471005e9da14df956a3707c4d81c112ee482d82907.css?body=1" data-turbolinks-track="reload" /&gt;
+    &lt;script src="/assets/rails-ujs.self-81c572f39b69ead02e3f97fe43b76954a434591bc2837e3a35af212315e67569.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/activestorage.self-1ed4604ac2170045f1ffca4edb81a75246661555e4f9cf682bb8a21825e32e1c.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/jquery/dist/jquery.min.self-a6ed45d15e46615f8c15931ca254e398a912e770b10122a4435529a1a523180d.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/serviceworker-companion.self-f98d7fe77f78b7ba7f81e7f00bacf86b9f2c0eb054dae1480f8a4cbd2b80f981.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/albums.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/artists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/action_cable.self-69fddfcddf4fdef9828648f9330d6ce108b93b82b0b8d3affffc59a114853451.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/cable.self-8484513823f404ed0c0f039f75243bfdede7af7919dda65f2e66391252443ce9.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/dashboard.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/favorites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/player.self-946bbe25f31ccfd8ed89f201842330c1edb1636155bb8f5dea1ad9f52d688c08.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/recently_heards.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/search.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/serviceworker.self-8f1e7ce8bb27e47095d16b101b578eeb181d07f4f0dc34eac7bf483b4888ca53.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/tabs.self-dea82d54dbb6acdbd8706551e2b4ef2fab0bc2e2a0b5a94fde396a42dd28f455.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/application.self-d088784b7ecb87f1ea17e6f982fa968ffefcc07b79de6ecc548fc00242868da6.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+    &lt;link rel="manifest" href="/manifest.json" /&gt;
+    &lt;meta name="apple-mobile-web-app-capable" content="yes"&gt;
+    &lt;link rel="shortcut icon" type="image/x-icon" href="/assets/favicon-536e2938d293855622b2b631a8d58a928c21130b12df31dcfe806d50c6b6914d.png" /&gt;
+    &lt;!-- Facebook Pixel Code --&gt;
+      &lt;script&gt;
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '290629855465285');
+      fbq('track', 'PageView');
+      &lt;/script&gt;
+      &lt;noscript&gt;&lt;img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=290629855465285&amp;ev=PageView&amp;noscript=1"
+      /&gt;&lt;/noscript&gt;
+    &lt;!-- End Facebook Pixel Code --&gt;
+
+    &lt;!-- Global site tag (gtag.js) - Google Analytics --&gt;
+    &lt;script async src="https://www.googletagmanager.com/gtag/js?id=UA-105779757-4"&gt;&lt;/script&gt;
+    &lt;script&gt;
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-105779757-4');
+    &lt;/script&gt;
+&lt;/head&gt;
+
+  &lt;body&gt;
+    &lt;nav class="columns is-mobile is-black navbar is-fixed-top"&gt;
+  &lt;div class="column is-4-desktop logo"&gt;
+    &lt;img style="width:200px;" src="/assets/logo-dark-5f10b845176006b4a5afdc41430d0b8846cc73726d90a6a34cc12c51f0f2b6b3.png" /&gt;
+  &lt;/div&gt;
+
+
+      &lt;div class="column menu-button"&gt;       
+        &lt;a class="button is-pulled-right is-outlined is-white" href="/users/sign_in"&gt;Login&lt;/a&gt;
+      &lt;/div&gt;
+
+&lt;/nav&gt;
+
+
+    &lt;section class="hero is-fullheight landing"&gt;
+  &lt;div class="hero-body has-text-centered"&gt;
+    &lt;div class="container"&gt;
+      &lt;h1 class="title has-text-weight-black is-1 has-text-white"&gt;Usuário removido&lt;/h1&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+    &lt;audio id="song-player" src="#"&gt;&lt;/audio&gt;
+    
+  &lt;/body&gt;
+&lt;/html&gt;</msg>
+<status status="PASS" starttime="20210131 11:04:44.018" endtime="20210131 11:04:44.018"></status>
+</kw>
+<status status="PASS" starttime="20210131 11:04:37.068" endtime="20210131 11:04:44.018"></status>
+</kw>
+<kw name="Dado que eu esteja na página inicial do site" library="PO_cadastro_usuario">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${URL_SITE}</arg>
+</arguments>
+<msg timestamp="20210131 11:04:44.020" level="INFO">Opening url 'http://parodify.qaninja.com.br/'</msg>
+<status status="PASS" starttime="20210131 11:04:44.020" endtime="20210131 11:04:48.715"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${CADASTRO_BTN_EXPERIMENTE}</arg>
+</arguments>
+<status status="PASS" starttime="20210131 11:04:48.715" endtime="20210131 11:04:48.767"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${CADASTRO_BTN_EXPERIMENTE}</arg>
+</arguments>
+<msg timestamp="20210131 11:04:48.767" level="INFO">Clicking element 'css=a[class*='button is-m']'.</msg>
+<status status="PASS" starttime="20210131 11:04:48.767" endtime="20210131 11:04:48.881"></status>
+</kw>
+<status status="PASS" starttime="20210131 11:04:44.018" endtime="20210131 11:04:48.882"></status>
+</kw>
+<kw name="Quando realizo o cadastro apenas com o &quot;senha&quot;" library="PO_cadastro_usuario">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<arguments>
+<arg>id=user_email</arg>
+</arguments>
+<status status="PASS" starttime="20210131 11:04:48.885" endtime="20210131 11:04:49.202"></status>
+</kw>
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<arguments>
+<arg>8</arg>
+<arg>[LOWER]</arg>
+</arguments>
+<assign>
+<var>${SENHA}</var>
+</assign>
+<msg timestamp="20210131 11:04:49.202" level="INFO">${SENHA} = xfcjkflc</msg>
+<status status="PASS" starttime="20210131 11:04:49.202" endtime="20210131 11:04:49.202"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=user_password</arg>
+<arg>${SENHA}</arg>
+</arguments>
+<msg timestamp="20210131 11:04:49.202" level="INFO">Typing text 'xfcjkflc' into text field 'id=user_password'.</msg>
+<status status="PASS" starttime="20210131 11:04:49.202" endtime="20210131 11:04:49.381"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${BTN_CADASTRAR}</arg>
+</arguments>
+<msg timestamp="20210131 11:04:49.382" level="INFO">Clicking button 'css=input[class*='fullwidth']'.</msg>
+<status status="PASS" starttime="20210131 11:04:49.381" endtime="20210131 11:04:50.536"></status>
+</kw>
+<status status="PASS" starttime="20210131 11:04:48.883" endtime="20210131 11:04:50.536"></status>
+</kw>
+<kw name="Então verei a mensagem: &quot;Oops! Informe seu email.&quot;" library="PO_cadastro_usuario">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${MSG_ESPERADA}</arg>
+</arguments>
+<status status="PASS" starttime="20210131 11:04:50.536" endtime="20210131 11:04:50.585"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>${MENSAGEM}</arg>
+</arguments>
+<msg timestamp="20210131 11:04:50.615" level="INFO">Current page contains text 'Oops! Informe seu email.'.</msg>
+<status status="PASS" starttime="20210131 11:04:50.585" endtime="20210131 11:04:50.615"></status>
+</kw>
+<status status="PASS" starttime="20210131 11:04:50.536" endtime="20210131 11:04:50.615"></status>
+</kw>
+<kw name="Fechar navegador" library="resource" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210131 11:04:50.616" endtime="20210131 11:04:52.890"></status>
+</kw>
+<status status="PASS" starttime="20210131 11:04:50.616" endtime="20210131 11:04:52.890"></status>
+</kw>
+<tags>
+<tag>usuario_sem_email</tag>
+</tags>
+<status status="PASS" starttime="20210131 11:04:37.065" endtime="20210131 11:04:52.891" critical="yes"></status>
+</test>
+<test id="s1-t5" name="Case 5: Cadastro sem dados necessários">
+<kw name="Abrir navegador e conectar a API" library="resource" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>${NAVEGADOR}</arg>
+</arguments>
+<msg timestamp="20210131 11:04:52.896" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20210131 11:04:52.896" endtime="20210131 11:04:56.454"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210131 11:04:56.454" endtime="20210131 11:04:58.650"></status>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>apiQa</arg>
+<arg>${URL_API}</arg>
+</arguments>
+<msg timestamp="20210131 11:04:58.650" level="INFO">Creating Session using : alias=apiQa, url=http://parodify.qaninja.com.br/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210131 11:04:58.650" endtime="20210131 11:04:58.654"></status>
+</kw>
+<kw name="Get Request" library="RequestsLibrary">
+<doc>Send a GET request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>apiQa</arg>
+<arg>helpers?email=juliano@gmail.com</arg>
+</arguments>
+<assign>
+<var>${RETONO_API}</var>
+</assign>
+<msg timestamp="20210131 11:04:59.036" level="INFO">GET Request : url=http://parodify.qaninja.com.br//helpers?email=juliano@gmail.com 
+ path_url=//helpers?email=juliano@gmail.com 
+ headers={'User-Agent': 'python-requests/2.25.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20210131 11:04:59.036" level="INFO">GET Response : url=http://parodify.qaninja.com.br//helpers?email=juliano@gmail.com 
+ status=200, reason=OK 
+ body=&lt;!DOCTYPE html&gt;
+&lt;html class="has-navbar-fixed-top"&gt;
+  &lt;head&gt;
+    &lt;title&gt;Parodify | QA Ninja&lt;/title&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;meta name="csrf-param" content="authenticity_token" /&gt;
+&lt;meta name="csrf-token" content="Sl+VfC9HjjPxaSasV9yH71znx8tPCsRz5GPDoYie+Hm7yK8jrQcZc1rTuyTbQcwx5uZuIQwivTdBCPy/1Etivg==" /&gt;
+    
+
+    &lt;link rel="stylesheet" media="all" href="/assets/application.self-c11562e6979f4d53463bf6471005e9da14df956a3707c4d81c112ee482d82907.css?body=1" data-turbolinks-track="reload" /&gt;
+    &lt;script src="/assets/rails-ujs.self-81c572f39b69ead02e3f97fe43b76954a434591bc2837e3a35af212315e67569.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/activestorage.self-1ed4604ac2170045f1ffca4edb81a75246661555e4f9cf682bb8a21825e32e1c.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/jquery/dist/jquery.min.self-a6ed45d15e46615f8c15931ca254e398a912e770b10122a4435529a1a523180d.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/serviceworker-companion.self-f98d7fe77f78b7ba7f81e7f00bacf86b9f2c0eb054dae1480f8a4cbd2b80f981.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/albums.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/artists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/action_cable.self-69fddfcddf4fdef9828648f9330d6ce108b93b82b0b8d3affffc59a114853451.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/cable.self-8484513823f404ed0c0f039f75243bfdede7af7919dda65f2e66391252443ce9.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/dashboard.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/favorites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/player.self-946bbe25f31ccfd8ed89f201842330c1edb1636155bb8f5dea1ad9f52d688c08.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/recently_heards.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/search.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/serviceworker.self-8f1e7ce8bb27e47095d16b101b578eeb181d07f4f0dc34eac7bf483b4888ca53.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/tabs.self-dea82d54dbb6acdbd8706551e2b4ef2fab0bc2e2a0b5a94fde396a42dd28f455.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/application.self-d088784b7ecb87f1ea17e6f982fa968ffefcc07b79de6ecc548fc00242868da6.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+    &lt;link rel="manifest" href="/manifest.json" /&gt;
+    &lt;meta name="apple-mobile-web-app-capable" content="yes"&gt;
+    &lt;link rel="shortcut icon" type="image/x-icon" href="/assets/favicon-536e2938d293855622b2b631a8d58a928c21130b12df31dcfe806d50c6b6914d.png" /&gt;
+    &lt;!-- Facebook Pixel Code --&gt;
+      &lt;script&gt;
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '290629855465285');
+      fbq('track', 'PageView');
+      &lt;/script&gt;
+      &lt;noscript&gt;&lt;img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=290629855465285&amp;ev=PageView&amp;noscript=1"
+      /&gt;&lt;/noscript&gt;
+    &lt;!-- End Facebook Pixel Code --&gt;
+
+    &lt;!-- Global site tag (gtag.js) - Google Analytics --&gt;
+    &lt;script async src="https://www.googletagmanager.com/gtag/js?id=UA-105779757-4"&gt;&lt;/script&gt;
+    &lt;script&gt;
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-105779757-4');
+    &lt;/script&gt;
+&lt;/head&gt;
+
+  &lt;body&gt;
+    &lt;nav class="columns is-mobile is-black navbar is-fixed-top"&gt;
+  &lt;div class="column is-4-desktop logo"&gt;
+    &lt;img style="width:200px;" src="/assets/logo-dark-5f10b845176006b4a5afdc41430d0b8846cc73726d90a6a34cc12c51f0f2b6b3.png" /&gt;
+  &lt;/div&gt;
+
+
+      &lt;div class="column menu-button"&gt;       
+        &lt;a class="button is-pulled-right is-outlined is-white" href="/users/sign_in"&gt;Login&lt;/a&gt;
+      &lt;/div&gt;
+
+&lt;/nav&gt;
+
+
+    &lt;section class="hero is-fullheight landing"&gt;
+  &lt;div class="hero-body has-text-centered"&gt;
+    &lt;div class="container"&gt;
+      &lt;h1 class="title has-text-weight-black is-1 has-text-white"&gt;Usuário removido&lt;/h1&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+    &lt;audio id="song-player" src="#"&gt;&lt;/audio&gt;
+    
+  &lt;/body&gt;
+&lt;/html&gt; 
+ </msg>
+<msg timestamp="20210131 11:04:59.036" level="INFO">${RETONO_API} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210131 11:04:58.654" endtime="20210131 11:04:59.036"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${RETONO_API.text}</arg>
+</arguments>
+<msg timestamp="20210131 11:04:59.036" level="INFO">&lt;!DOCTYPE html&gt;
+&lt;html class="has-navbar-fixed-top"&gt;
+  &lt;head&gt;
+    &lt;title&gt;Parodify | QA Ninja&lt;/title&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;meta name="csrf-param" content="authenticity_token" /&gt;
+&lt;meta name="csrf-token" content="Sl+VfC9HjjPxaSasV9yH71znx8tPCsRz5GPDoYie+Hm7yK8jrQcZc1rTuyTbQcwx5uZuIQwivTdBCPy/1Etivg==" /&gt;
+    
+
+    &lt;link rel="stylesheet" media="all" href="/assets/application.self-c11562e6979f4d53463bf6471005e9da14df956a3707c4d81c112ee482d82907.css?body=1" data-turbolinks-track="reload" /&gt;
+    &lt;script src="/assets/rails-ujs.self-81c572f39b69ead02e3f97fe43b76954a434591bc2837e3a35af212315e67569.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/activestorage.self-1ed4604ac2170045f1ffca4edb81a75246661555e4f9cf682bb8a21825e32e1c.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/jquery/dist/jquery.min.self-a6ed45d15e46615f8c15931ca254e398a912e770b10122a4435529a1a523180d.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/serviceworker-companion.self-f98d7fe77f78b7ba7f81e7f00bacf86b9f2c0eb054dae1480f8a4cbd2b80f981.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/albums.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/artists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/action_cable.self-69fddfcddf4fdef9828648f9330d6ce108b93b82b0b8d3affffc59a114853451.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/cable.self-8484513823f404ed0c0f039f75243bfdede7af7919dda65f2e66391252443ce9.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/dashboard.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/favorites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/player.self-946bbe25f31ccfd8ed89f201842330c1edb1636155bb8f5dea1ad9f52d688c08.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/recently_heards.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/search.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/serviceworker.self-8f1e7ce8bb27e47095d16b101b578eeb181d07f4f0dc34eac7bf483b4888ca53.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/tabs.self-dea82d54dbb6acdbd8706551e2b4ef2fab0bc2e2a0b5a94fde396a42dd28f455.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/application.self-d088784b7ecb87f1ea17e6f982fa968ffefcc07b79de6ecc548fc00242868da6.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+    &lt;link rel="manifest" href="/manifest.json" /&gt;
+    &lt;meta name="apple-mobile-web-app-capable" content="yes"&gt;
+    &lt;link rel="shortcut icon" type="image/x-icon" href="/assets/favicon-536e2938d293855622b2b631a8d58a928c21130b12df31dcfe806d50c6b6914d.png" /&gt;
+    &lt;!-- Facebook Pixel Code --&gt;
+      &lt;script&gt;
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '290629855465285');
+      fbq('track', 'PageView');
+      &lt;/script&gt;
+      &lt;noscript&gt;&lt;img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=290629855465285&amp;ev=PageView&amp;noscript=1"
+      /&gt;&lt;/noscript&gt;
+    &lt;!-- End Facebook Pixel Code --&gt;
+
+    &lt;!-- Global site tag (gtag.js) - Google Analytics --&gt;
+    &lt;script async src="https://www.googletagmanager.com/gtag/js?id=UA-105779757-4"&gt;&lt;/script&gt;
+    &lt;script&gt;
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-105779757-4');
+    &lt;/script&gt;
+&lt;/head&gt;
+
+  &lt;body&gt;
+    &lt;nav class="columns is-mobile is-black navbar is-fixed-top"&gt;
+  &lt;div class="column is-4-desktop logo"&gt;
+    &lt;img style="width:200px;" src="/assets/logo-dark-5f10b845176006b4a5afdc41430d0b8846cc73726d90a6a34cc12c51f0f2b6b3.png" /&gt;
+  &lt;/div&gt;
+
+
+      &lt;div class="column menu-button"&gt;       
+        &lt;a class="button is-pulled-right is-outlined is-white" href="/users/sign_in"&gt;Login&lt;/a&gt;
+      &lt;/div&gt;
+
+&lt;/nav&gt;
+
+
+    &lt;section class="hero is-fullheight landing"&gt;
+  &lt;div class="hero-body has-text-centered"&gt;
+    &lt;div class="container"&gt;
+      &lt;h1 class="title has-text-weight-black is-1 has-text-white"&gt;Usuário removido&lt;/h1&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+    &lt;audio id="song-player" src="#"&gt;&lt;/audio&gt;
+    
+  &lt;/body&gt;
+&lt;/html&gt;</msg>
+<status status="PASS" starttime="20210131 11:04:59.036" endtime="20210131 11:04:59.036"></status>
+</kw>
+<status status="PASS" starttime="20210131 11:04:52.896" endtime="20210131 11:04:59.036"></status>
+</kw>
+<kw name="Dado que eu esteja na página inicial do site" library="PO_cadastro_usuario">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${URL_SITE}</arg>
+</arguments>
+<msg timestamp="20210131 11:04:59.036" level="INFO">Opening url 'http://parodify.qaninja.com.br/'</msg>
+<status status="PASS" starttime="20210131 11:04:59.036" endtime="20210131 11:05:04.245"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${CADASTRO_BTN_EXPERIMENTE}</arg>
+</arguments>
+<status status="PASS" starttime="20210131 11:05:04.246" endtime="20210131 11:05:04.358"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${CADASTRO_BTN_EXPERIMENTE}</arg>
+</arguments>
+<msg timestamp="20210131 11:05:04.358" level="INFO">Clicking element 'css=a[class*='button is-m']'.</msg>
+<status status="PASS" starttime="20210131 11:05:04.358" endtime="20210131 11:05:04.537"></status>
+</kw>
+<status status="PASS" starttime="20210131 11:04:59.036" endtime="20210131 11:05:04.537"></status>
+</kw>
+<kw name="Quando submeto o cadastro sem os dados necessários" library="PO_cadastro_usuario">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<arguments>
+<arg>id=user_email</arg>
+</arguments>
+<status status="PASS" starttime="20210131 11:05:04.540" endtime="20210131 11:05:04.929"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${BTN_CADASTRAR}</arg>
+</arguments>
+<msg timestamp="20210131 11:05:04.930" level="INFO">Clicking button 'css=input[class*='fullwidth']'.</msg>
+<status status="PASS" starttime="20210131 11:05:04.930" endtime="20210131 11:05:06.098"></status>
+</kw>
+<status status="PASS" starttime="20210131 11:05:04.539" endtime="20210131 11:05:06.098"></status>
+</kw>
+<kw name="Então verei a mensagem: &quot;Oops! Informe seu email e sua senha.&quot;" library="PO_cadastro_usuario">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${MSG_ESPERADA}</arg>
+</arguments>
+<status status="PASS" starttime="20210131 11:05:06.098" endtime="20210131 11:05:06.156"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>${MENSAGEM}</arg>
+</arguments>
+<msg timestamp="20210131 11:05:06.189" level="INFO">Current page contains text 'Oops! Informe seu email e sua senha.'.</msg>
+<status status="PASS" starttime="20210131 11:05:06.156" endtime="20210131 11:05:06.189"></status>
+</kw>
+<status status="PASS" starttime="20210131 11:05:06.098" endtime="20210131 11:05:06.190"></status>
+</kw>
+<kw name="Fechar navegador" library="resource" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210131 11:05:06.192" endtime="20210131 11:05:08.446"></status>
+</kw>
+<status status="PASS" starttime="20210131 11:05:06.191" endtime="20210131 11:05:08.446"></status>
+</kw>
+<tags>
+<tag>cadastro_em_branco</tag>
+</tags>
+<status status="PASS" starttime="20210131 11:04:52.895" endtime="20210131 11:05:08.446" critical="yes"></status>
+</test>
+<test id="s1-t6" name="Case 6: Cadastro com senha divergente">
+<kw name="Abrir navegador e conectar a API" library="resource" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>${NAVEGADOR}</arg>
+</arguments>
+<msg timestamp="20210131 11:05:08.455" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20210131 11:05:08.455" endtime="20210131 11:05:11.981"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210131 11:05:11.982" endtime="20210131 11:05:14.153"></status>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>apiQa</arg>
+<arg>${URL_API}</arg>
+</arguments>
+<msg timestamp="20210131 11:05:14.155" level="INFO">Creating Session using : alias=apiQa, url=http://parodify.qaninja.com.br/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210131 11:05:14.153" endtime="20210131 11:05:14.157"></status>
+</kw>
+<kw name="Get Request" library="RequestsLibrary">
+<doc>Send a GET request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>apiQa</arg>
+<arg>helpers?email=juliano@gmail.com</arg>
+</arguments>
+<assign>
+<var>${RETONO_API}</var>
+</assign>
+<msg timestamp="20210131 11:05:14.590" level="INFO">GET Request : url=http://parodify.qaninja.com.br//helpers?email=juliano@gmail.com 
+ path_url=//helpers?email=juliano@gmail.com 
+ headers={'User-Agent': 'python-requests/2.25.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20210131 11:05:14.590" level="INFO">GET Response : url=http://parodify.qaninja.com.br//helpers?email=juliano@gmail.com 
+ status=200, reason=OK 
+ body=&lt;!DOCTYPE html&gt;
+&lt;html class="has-navbar-fixed-top"&gt;
+  &lt;head&gt;
+    &lt;title&gt;Parodify | QA Ninja&lt;/title&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;meta name="csrf-param" content="authenticity_token" /&gt;
+&lt;meta name="csrf-token" content="ciA5VfXnFtQheTIJwPSjzeb6KyrFyqWoonAA5h5683mBGUAOP6Dm/UBjA79Mz4g9cLm19wNVB/BEPas0SQL4Xg==" /&gt;
+    
+
+    &lt;link rel="stylesheet" media="all" href="/assets/application.self-c11562e6979f4d53463bf6471005e9da14df956a3707c4d81c112ee482d82907.css?body=1" data-turbolinks-track="reload" /&gt;
+    &lt;script src="/assets/rails-ujs.self-81c572f39b69ead02e3f97fe43b76954a434591bc2837e3a35af212315e67569.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/activestorage.self-1ed4604ac2170045f1ffca4edb81a75246661555e4f9cf682bb8a21825e32e1c.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/jquery/dist/jquery.min.self-a6ed45d15e46615f8c15931ca254e398a912e770b10122a4435529a1a523180d.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/serviceworker-companion.self-f98d7fe77f78b7ba7f81e7f00bacf86b9f2c0eb054dae1480f8a4cbd2b80f981.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/albums.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/artists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/action_cable.self-69fddfcddf4fdef9828648f9330d6ce108b93b82b0b8d3affffc59a114853451.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/cable.self-8484513823f404ed0c0f039f75243bfdede7af7919dda65f2e66391252443ce9.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/dashboard.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/favorites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/player.self-946bbe25f31ccfd8ed89f201842330c1edb1636155bb8f5dea1ad9f52d688c08.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/recently_heards.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/search.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/serviceworker.self-8f1e7ce8bb27e47095d16b101b578eeb181d07f4f0dc34eac7bf483b4888ca53.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/tabs.self-dea82d54dbb6acdbd8706551e2b4ef2fab0bc2e2a0b5a94fde396a42dd28f455.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/application.self-d088784b7ecb87f1ea17e6f982fa968ffefcc07b79de6ecc548fc00242868da6.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+    &lt;link rel="manifest" href="/manifest.json" /&gt;
+    &lt;meta name="apple-mobile-web-app-capable" content="yes"&gt;
+    &lt;link rel="shortcut icon" type="image/x-icon" href="/assets/favicon-536e2938d293855622b2b631a8d58a928c21130b12df31dcfe806d50c6b6914d.png" /&gt;
+    &lt;!-- Facebook Pixel Code --&gt;
+      &lt;script&gt;
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '290629855465285');
+      fbq('track', 'PageView');
+      &lt;/script&gt;
+      &lt;noscript&gt;&lt;img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=290629855465285&amp;ev=PageView&amp;noscript=1"
+      /&gt;&lt;/noscript&gt;
+    &lt;!-- End Facebook Pixel Code --&gt;
+
+    &lt;!-- Global site tag (gtag.js) - Google Analytics --&gt;
+    &lt;script async src="https://www.googletagmanager.com/gtag/js?id=UA-105779757-4"&gt;&lt;/script&gt;
+    &lt;script&gt;
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-105779757-4');
+    &lt;/script&gt;
+&lt;/head&gt;
+
+  &lt;body&gt;
+    &lt;nav class="columns is-mobile is-black navbar is-fixed-top"&gt;
+  &lt;div class="column is-4-desktop logo"&gt;
+    &lt;img style="width:200px;" src="/assets/logo-dark-5f10b845176006b4a5afdc41430d0b8846cc73726d90a6a34cc12c51f0f2b6b3.png" /&gt;
+  &lt;/div&gt;
+
+
+      &lt;div class="column menu-button"&gt;       
+        &lt;a class="button is-pulled-right is-outlined is-white" href="/users/sign_in"&gt;Login&lt;/a&gt;
+      &lt;/div&gt;
+
+&lt;/nav&gt;
+
+
+    &lt;section class="hero is-fullheight landing"&gt;
+  &lt;div class="hero-body has-text-centered"&gt;
+    &lt;div class="container"&gt;
+      &lt;h1 class="title has-text-weight-black is-1 has-text-white"&gt;Usuário removido&lt;/h1&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+    &lt;audio id="song-player" src="#"&gt;&lt;/audio&gt;
+    
+  &lt;/body&gt;
+&lt;/html&gt; 
+ </msg>
+<msg timestamp="20210131 11:05:14.590" level="INFO">${RETONO_API} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210131 11:05:14.158" endtime="20210131 11:05:14.590"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${RETONO_API.text}</arg>
+</arguments>
+<msg timestamp="20210131 11:05:14.590" level="INFO">&lt;!DOCTYPE html&gt;
+&lt;html class="has-navbar-fixed-top"&gt;
+  &lt;head&gt;
+    &lt;title&gt;Parodify | QA Ninja&lt;/title&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;meta name="csrf-param" content="authenticity_token" /&gt;
+&lt;meta name="csrf-token" content="ciA5VfXnFtQheTIJwPSjzeb6KyrFyqWoonAA5h5683mBGUAOP6Dm/UBjA79Mz4g9cLm19wNVB/BEPas0SQL4Xg==" /&gt;
+    
+
+    &lt;link rel="stylesheet" media="all" href="/assets/application.self-c11562e6979f4d53463bf6471005e9da14df956a3707c4d81c112ee482d82907.css?body=1" data-turbolinks-track="reload" /&gt;
+    &lt;script src="/assets/rails-ujs.self-81c572f39b69ead02e3f97fe43b76954a434591bc2837e3a35af212315e67569.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/activestorage.self-1ed4604ac2170045f1ffca4edb81a75246661555e4f9cf682bb8a21825e32e1c.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/jquery/dist/jquery.min.self-a6ed45d15e46615f8c15931ca254e398a912e770b10122a4435529a1a523180d.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/serviceworker-companion.self-f98d7fe77f78b7ba7f81e7f00bacf86b9f2c0eb054dae1480f8a4cbd2b80f981.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/albums.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/artists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/action_cable.self-69fddfcddf4fdef9828648f9330d6ce108b93b82b0b8d3affffc59a114853451.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/cable.self-8484513823f404ed0c0f039f75243bfdede7af7919dda65f2e66391252443ce9.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/dashboard.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/favorites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/player.self-946bbe25f31ccfd8ed89f201842330c1edb1636155bb8f5dea1ad9f52d688c08.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/recently_heards.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/search.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/serviceworker.self-8f1e7ce8bb27e47095d16b101b578eeb181d07f4f0dc34eac7bf483b4888ca53.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/tabs.self-dea82d54dbb6acdbd8706551e2b4ef2fab0bc2e2a0b5a94fde396a42dd28f455.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+&lt;script src="/assets/application.self-d088784b7ecb87f1ea17e6f982fa968ffefcc07b79de6ecc548fc00242868da6.js?body=1" data-turbolinks-track="reload"&gt;&lt;/script&gt;
+    &lt;link rel="manifest" href="/manifest.json" /&gt;
+    &lt;meta name="apple-mobile-web-app-capable" content="yes"&gt;
+    &lt;link rel="shortcut icon" type="image/x-icon" href="/assets/favicon-536e2938d293855622b2b631a8d58a928c21130b12df31dcfe806d50c6b6914d.png" /&gt;
+    &lt;!-- Facebook Pixel Code --&gt;
+      &lt;script&gt;
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '290629855465285');
+      fbq('track', 'PageView');
+      &lt;/script&gt;
+      &lt;noscript&gt;&lt;img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=290629855465285&amp;ev=PageView&amp;noscript=1"
+      /&gt;&lt;/noscript&gt;
+    &lt;!-- End Facebook Pixel Code --&gt;
+
+    &lt;!-- Global site tag (gtag.js) - Google Analytics --&gt;
+    &lt;script async src="https://www.googletagmanager.com/gtag/js?id=UA-105779757-4"&gt;&lt;/script&gt;
+    &lt;script&gt;
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-105779757-4');
+    &lt;/script&gt;
+&lt;/head&gt;
+
+  &lt;body&gt;
+    &lt;nav class="columns is-mobile is-black navbar is-fixed-top"&gt;
+  &lt;div class="column is-4-desktop logo"&gt;
+    &lt;img style="width:200px;" src="/assets/logo-dark-5f10b845176006b4a5afdc41430d0b8846cc73726d90a6a34cc12c51f0f2b6b3.png" /&gt;
+  &lt;/div&gt;
+
+
+      &lt;div class="column menu-button"&gt;       
+        &lt;a class="button is-pulled-right is-outlined is-white" href="/users/sign_in"&gt;Login&lt;/a&gt;
+      &lt;/div&gt;
+
+&lt;/nav&gt;
+
+
+    &lt;section class="hero is-fullheight landing"&gt;
+  &lt;div class="hero-body has-text-centered"&gt;
+    &lt;div class="container"&gt;
+      &lt;h1 class="title has-text-weight-black is-1 has-text-white"&gt;Usuário removido&lt;/h1&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+    &lt;audio id="song-player" src="#"&gt;&lt;/audio&gt;
+    
+  &lt;/body&gt;
+&lt;/html&gt;</msg>
+<status status="PASS" starttime="20210131 11:05:14.590" endtime="20210131 11:05:14.590"></status>
+</kw>
+<status status="PASS" starttime="20210131 11:05:08.455" endtime="20210131 11:05:14.590"></status>
+</kw>
+<kw name="Dado que eu esteja na página inicial do site" library="PO_cadastro_usuario">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${URL_SITE}</arg>
+</arguments>
+<msg timestamp="20210131 11:05:14.590" level="INFO">Opening url 'http://parodify.qaninja.com.br/'</msg>
+<status status="PASS" starttime="20210131 11:05:14.590" endtime="20210131 11:05:20.208"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${CADASTRO_BTN_EXPERIMENTE}</arg>
+</arguments>
+<status status="PASS" starttime="20210131 11:05:20.208" endtime="20210131 11:05:20.262"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${CADASTRO_BTN_EXPERIMENTE}</arg>
+</arguments>
+<msg timestamp="20210131 11:05:20.262" level="INFO">Clicking element 'css=a[class*='button is-m']'.</msg>
+<status status="PASS" starttime="20210131 11:05:20.262" endtime="20210131 11:05:20.377"></status>
+</kw>
+<status status="PASS" starttime="20210131 11:05:14.590" endtime="20210131 11:05:20.377"></status>
+</kw>
+<kw name="Quando submeto o cadastro com senha divergente" library="PO_cadastro_usuario">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<arguments>
+<arg>id=user_email</arg>
+</arguments>
+<status status="PASS" starttime="20210131 11:05:20.379" endtime="20210131 11:05:20.871"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=user_email</arg>
+<arg>juliano@gmail.com</arg>
+</arguments>
+<msg timestamp="20210131 11:05:20.871" level="INFO">Typing text 'juliano@gmail.com' into text field 'id=user_email'.</msg>
+<status status="PASS" starttime="20210131 11:05:20.871" endtime="20210131 11:05:20.978"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=user_password</arg>
+<arg>a123</arg>
+</arguments>
+<msg timestamp="20210131 11:05:20.978" level="INFO">Typing text 'a123' into text field 'id=user_password'.</msg>
+<status status="PASS" starttime="20210131 11:05:20.978" endtime="20210131 11:05:21.081"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=user_password_confirmation</arg>
+<arg>a321</arg>
+</arguments>
+<msg timestamp="20210131 11:05:21.082" level="INFO">Typing text 'a321' into text field 'id=user_password_confirmation'.</msg>
+<status status="PASS" starttime="20210131 11:05:21.081" endtime="20210131 11:05:21.202"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${BTN_CADASTRAR}</arg>
+</arguments>
+<msg timestamp="20210131 11:05:21.202" level="INFO">Clicking button 'css=input[class*='fullwidth']'.</msg>
+<status status="PASS" starttime="20210131 11:05:21.202" endtime="20210131 11:05:22.381"></status>
+</kw>
+<status status="PASS" starttime="20210131 11:05:20.378" endtime="20210131 11:05:22.381"></status>
+</kw>
+<kw name="Então verei a mensagem: &quot;Oops! Senhas não são iguais.&quot;" library="PO_cadastro_usuario">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${MSG_ESPERADA}</arg>
+</arguments>
+<status status="PASS" starttime="20210131 11:05:22.381" endtime="20210131 11:05:22.431"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>${MENSAGEM}</arg>
+</arguments>
+<msg timestamp="20210131 11:05:22.461" level="INFO">Current page contains text 'Oops! Senhas não são iguais.'.</msg>
+<status status="PASS" starttime="20210131 11:05:22.431" endtime="20210131 11:05:22.461"></status>
+</kw>
+<status status="PASS" starttime="20210131 11:05:22.381" endtime="20210131 11:05:22.461"></status>
+</kw>
+<kw name="Fechar navegador" library="resource" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210131 11:05:22.461" endtime="20210131 11:05:24.642"></status>
+</kw>
+<status status="PASS" starttime="20210131 11:05:22.461" endtime="20210131 11:05:24.643"></status>
+</kw>
+<tags>
+<tag>senha_divergente</tag>
+</tags>
+<status status="PASS" starttime="20210131 11:05:08.455" endtime="20210131 11:05:24.643" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20210131 11:03:49.263" endtime="20210131 11:05:24.650"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="6" fail="0">Critical Tests</stat>
+<stat pass="6" fail="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0">busca_musica</stat>
+<stat pass="1" fail="0">cadastrar_usuario</stat>
+<stat pass="1" fail="0">cadastro_em_branco</stat>
+<stat pass="1" fail="0">senha_divergente</stat>
+<stat pass="1" fail="0">usuario_sem_email</stat>
+<stat pass="1" fail="0">usuario_sem_senha</stat>
+</tag>
+<suite>
+<stat pass="6" fail="0" id="s1" name="Parodify">Parodify</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
